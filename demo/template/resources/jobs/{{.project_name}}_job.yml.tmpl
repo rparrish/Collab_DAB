@@ -2,7 +2,7 @@
 resources:
   jobs:
     {{.project_name}}_job:
-      name: this shows in Workflows as {{.project_name}}_job
+      name: {{.project_name}} this shows in Workflows 
 
 
       schedule:
@@ -20,6 +20,9 @@ resources:
           environment_key: default
           spark_python_task:
             python_file: ../../src/task.py
+        - task_key: sql_task
+          notebook_task:
+            notebook_path: ../../src/task.sql
      
       queue:
         enabled: true
@@ -31,5 +34,5 @@ resources:
       # Full documentation of this spec can be found at:
       # https://docs.databricks.com/api/workspace/jobs/create#environments-spec
           spec:
-            client: "1" 
+            client: "2" 
 

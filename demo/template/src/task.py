@@ -1,7 +1,7 @@
-  import pyspark
-  from pyspark.sql import SparkSession
+import pyspark
+from pyspark.sql import SparkSession
 
-  spark = SparkSession.builder.master('local[*]').appName('example').getOrCreate()
+spark = SparkSession.builder.getOrCreate()
 
-  print(f'Spark version{spark.version}')
+print(f'Spark version{spark.version}')
 
